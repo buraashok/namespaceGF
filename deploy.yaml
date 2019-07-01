@@ -3,8 +3,9 @@
   hosts: localhost
   tasks:
   - name: fail build
-    fail:
-      msg: "Label mismatch"
+    #fail:
+    #  msg: "Label mismatch"
+    command: bash -c "exit 1"
     when: value1!="valueone"
   - name: Generate pod template
     template:
