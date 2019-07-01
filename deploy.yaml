@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
   - name: fail build
-    command: "exit 1"
+    command: bash -c "exit 1"
     when: value1!="valueone"
   - name: Generate pod template
     template:
