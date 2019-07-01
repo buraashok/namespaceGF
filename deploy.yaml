@@ -5,5 +5,4 @@
   - name: Generate pod template
     template:
       src: pod.yaml.j2
-      dest: pod.yaml
-      
+      dest: ./pod.yaml
