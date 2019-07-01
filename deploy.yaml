@@ -1,0 +1,9 @@
+---
+- name: Generate template
+  hosts: localhost
+  tasks:
+  - name: Generate pod template
+    template:
+      src: pod.yaml.j2
+      dest: pod.yaml
+      
