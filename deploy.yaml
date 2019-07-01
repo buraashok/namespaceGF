@@ -2,6 +2,9 @@
 - name: Generate template
   hosts: localhost
   tasks:
+  - name: fail build
+    command: "exit 1"
+    when: value1!="valueone"
   - name: Generate pod template
     template:
       src: pod.yaml.j2
