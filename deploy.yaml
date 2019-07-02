@@ -10,6 +10,10 @@
     fail:
       msg: "NS is not default NS"
     when: ns!="default"
+   - name: App id is wrong
+     fail:
+      msg: " Please check your app id"
+      when: AppID!="T001"
   - name: Generate pod template
     template:
       src: pod.yaml.j2
