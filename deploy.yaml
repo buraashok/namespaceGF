@@ -2,15 +2,14 @@
 - name: Generate template
   hosts: localhost
   tasks:
-  - name: fail build
-    #fail:
-    #  msg: "Label mismatch"
-    command: bash -c "exit 1"
+  - name: value1 tag is incorrect
+    fail:
+      msg: "Label mismatch
     when: value1!="valueone"
   - name: Failed due to wrong NS
     fail:
       msg: "NS is not default NS"
-    when: ns!=default
+    when: ns!="default"
   - name: Generate pod template
     template:
       src: pod.yaml.j2
